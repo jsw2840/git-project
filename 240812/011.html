@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 자료형</title>
+</head>
+<body>
+<script>
+    // 문자열 자료형
+    let string1 = 'Hello';
+    let string2 = "World";
+
+    console.log(string1); // Hello
+    console.log(string2); // World
+
+    // 특징1: 순서가 있습니다.
+    let string3 = 'Hello World';
+    // 여기서 0을 index라고 하고
+    // 이렇게 호출하는 것을 indexing이라고 합니다.
+    console.log(string3[0]); //H
+    console.log(string3[1]); //e
+
+    // 특징2 : 문자 열 중 특정하여 값을 바꿀 수 없습니다.(immutable)
+    let string4 = 'Hello';
+    string4[0] = 'h';
+    console.log(string4); //Hello
+
+    // 특징 3: 다양한 메소드가 있습니다. 속성도 있습니다.
+    console.log(string4.length); //5 ;
+    console.log(string4.toUpperCase()); //HELLO
+
+    //특징4: 문자열을 합칠 수 있습니다.
+    let string5 = 'Hello';
+    let string6 = 'World';
+    console.log(string5 + string6); //HelloWorld
+</script>
+</body>
+</html>
