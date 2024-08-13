@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>콜백함수</title>
+</head>
+<body>
+  <script>
+    //문제1: 원의 넓이를 구하는 함수
+    //입력: 반지름
+    //함수의 형태: 함수 선언문, 함수 표현식
+    function c1(r) {
+      return r*r*3.14
+    }
+    let c2 = function (r) {
+        return r * r * 3.14;
+    };
+    //문제2: 직사각형이 넓이를 구하는 함수
+    //입력: 밑변, 높이
+    // 함수의 형태: 함수 선언문, 함수 표현식, 화살표 함수
+    function r1(x, y) {
+        return x * y;
+    }
+
+    let r2 = function (x, y) {
+        return x * y;
+    };
+
+    let r3 = (x, y) => x * y;
+  </script>
+</body>
+</html>
