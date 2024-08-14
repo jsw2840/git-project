@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 트리에 접근하기</title>
+</head>
+<body>
+    <h1 id="logo" class="title">hello world</h1>
+    <section>
+        <h2 id="sectionTitle">HTML</h2>
+        <p id="contents">HTML is HyperText Markup Language.,</p>
+    </section>
+    <script>
+        const logo = document.getElementById('logo');
+        const sectionTitle = document.querySelector('#section-title');
+        const sectionTitleAll = document.querySelectorAll('#section-title');
+        const hello = document.querySelector('.hello');
+
+        console.log(logo);
+        console.log(sectionTitle);
+        console.log(sectionTitleAll);
+        console.log(hello);
+    </script>
+</body>
+</html>

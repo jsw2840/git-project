@@ -30,8 +30,20 @@
 
     obj.f(); // obj
 
+    ////////////////////////
+
     function Person(name) {
         this.name = name;
+        console.log(this);
+    }
+
+    const persontest = Person('licat')
+
+    ////////////////////////
+
+    function Person(name) {
+        this.name = name;
+        this.age = 1;
         console.log(this);
         // return this
     }
