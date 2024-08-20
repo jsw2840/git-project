@@ -172,33 +172,112 @@
       line-height: 45px;
     }
 
+    .map-intro {
+      color: #606367;
+      margin-top:20px;
+      margin-bottom: 48px;
+    }
+
     .map{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      margin-bottom:80px;
+      margin-left: 320px;
     }
 
     .map-intro {
       font-weight: 500;
     }
 
+    .subscribe {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      position: relative;
+      padding: 51px 58px;
+      background-color: #263140;
+      border-radius: 30px;
+      color: #FFFFFF;
+      width: 1280px;
+      height: 200px;
+      margin-left: 320px;
+      margin-bottom: -150px;
+      gap: 163px;
+    }
+
+    .subscribe-title {
+      font-size: 36px;
+      line-height: 45px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .subscribe-txt {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      color: #F2E9D8;
+      margin-bottom: 51px;
+    }
+
+    .email-input {
+      width: 530px;
+      height: 60px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .email-box {
+      width: 100%;
+      height: 100%;
+      border-radius: 60px;
+      padding-left:68px;
+      box-sizing: border-box;
+      background:url("images/mail.svg") no-repeat 24px #FFFFFF;
+    }
+
+
+    .subscribe .btn-download {
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      transform: translateY(-50%);
+      width: 135px;
+      height: 50px;
+      padding: 15px 29px 15px 29px;
+      border-radius: 40px;
+    }
+
+
     footer {
       padding:0;
       box-sizing: border-box;
       width: 1920px;
-      height: 160px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      margin-left: 130px;
+      margin-bottom: 45px;
     }
 
     .sns {
       display: flex;
+      justify-content:center;
+      align-items: center;
       gap: 20px;
     }
 
+    .arrow-up {
+      position: fixed;
+      bottom: 179px;
+      right: 19px;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #c4c4c4;
+    }
 
   </style>
 </head>
@@ -229,7 +308,6 @@
 
       <button class="btn-download">Download</button>
 
-<!--      <img src="images/header.png" class="header-image" alt="">-->
     </div>
   </header>
   <main>
@@ -284,33 +362,36 @@
         </div>
       </div>
     </section>
+    <hr>
     <section class="map">
-      <hr>
       <p class="map-intro-title">Where you’ll be</p>
       <p class="map-intro">
         330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
       </p>
-      <div>
+      <div class="">
         map들어가는자리
       </div>
     </section>
     <section>
-      <h3>Subscribe to our Blog post</h3>
-      <p>
+      <div class="subscribe">
+        <div class="subscribe-intro">
+      <p class="subscribe-title">Subscribe to our Blog post</p>
+      <p class="subscribe-txt">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy text
       </p>
+        </div>
       <div class="email-input">
-        <img src="images/mail.svg" alt="">
-        <input type="email" class="email-address" placeholder="Enter your e-mail address">
+        <input type="email" class="email-box" placeholder="Enter your e-mail address">
         <button id="modal" class="btn-download">Subscribe</button>
+      </div>
       </div>
     </section>
     <div class="background-img">
       <img src="images/footer.png" alt="">
     </div>
     <div class="arrow-up">
-      <img src="images/keyboard_arrow_up.svg" alt="">
+      <img src="images/keyboard_arrow_up.svg" id="header-nav" alt="">
     </div>
   </main>
   <footer>
@@ -326,5 +407,14 @@
     </ul>
     </div>
   </footer>
+
+<script>
+  document.getElementById('header-nav').addEventListener('click',() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>
