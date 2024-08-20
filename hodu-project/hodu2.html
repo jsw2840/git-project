@@ -7,9 +7,13 @@
   <style>
     body{
       font-size: 16px;
+      line-height: 20px;
       font-family: 'Pretendard-Regular', sans-serif;
+      width: 1920px;
+      height: 100%;
     }
 
+    /* headr 부분*/
     header {
       display: flex;
       height: 900px;
@@ -19,10 +23,9 @@
 
     .header-nav {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      padding: 31px;
-      position: relative;
+      padding: 31px 320px;
     }
 
     nav > ul {
@@ -39,22 +42,27 @@
       justify-content: center;
       align-items: flex-start;
       gap: 40px;
+
+      background: url("images/header.png") bottom right no-repeat;
+      background-size: 415px 766px;
     }
 
-    .header-image {
-      width: 415px;
-      height: 890px;
-      position: absolute;
-      top:134px;
-      bottom: 0;
-      left:1185px;
-      margin: 20px;
+    /*.header-image {*/
+    /*  width: 415px;*/
+    /*  height: 890px;*/
+    /*  position: absolute;*/
+    /*  top:134px;*/
+    /*  bottom: 0;*/
+    /*  left:1185px;*/
+    /*  margin: 20px;*/
+    /*}*/
 
-    }
+
 
     .intro-title {
       font-size: 48px;
       font-weight: 700;
+      line-height: 60px;
     }
 
     .intro {
@@ -69,8 +77,110 @@
       border-radius: 40px;
     }
 
+    /*main 부분*/
+    .main-intro {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 80px;
+    }
+
+    .main-intro1 {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    .main-img1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /*box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);*/
+      border-radius: 30px;
+    }
+
+    .main-txt1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap:30px;
+      margin-left:110px;
+    }
+
+    .main-intro2 {
+     text-align: center;
+      margin-top: 120px;
+    }
+
+    .main-txt-title {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 60px;
+      color: #D97652;
+      text-align: center;
+      margin-bottom:40px;
+    }
+
+    .main-txt2 {
+      text-align: center;
+      margin-bottom:48px;
+    }
+
+    .img-top {
+      margin-left: 73px;
+      /*box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);*/
+      border-radius: 30px;
+    }
+
+    .img-bottom {
+      margin-left: 73px;
+      /*box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);*/
+      border-radius: 30px;
+    }
+
+    .main-scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top:100px;
+    }
+
+    .main-explain {
+      margin-bottom: 28px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+      text-align: center;
+    }
+
     strong {
       color:#D97652;
+    }
+
+    hr {
+      color: #c4c4c4;
+      height: 1px;
+      margin-top:80px;
+      margin-bottom: 68px;
+      width: 1280px;
+    }
+
+    .map-intro-title {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 45px;
+    }
+
+    .map{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .map-intro {
+      font-weight: 500;
     }
 
     footer {
@@ -79,7 +189,7 @@
       width: 1920px;
       height: 160px;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       margin-left: 130px;
     }
@@ -119,24 +229,36 @@
 
       <button class="btn-download">Download</button>
 
-      <img src="images/header.png" class="header-image" alt="">
+<!--      <img src="images/header.png" class="header-image" alt="">-->
     </div>
   </header>
   <main>
     <section class="main-intro">
+      <div class="main-img1">
       <img src="images/main1.png" alt="">
-      <h2>
-        Lorem Ipsum is simply
-        dummy text of the printing and dummy text
-      </h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+      </div>
+      <div class="main-txt1">
+      <p class="main-intro1">
+        Lorem Ipsum is simply<br>
+        dummy text of the printing<br>
+        and dummy text
+      </p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br>
+        industry. </p>
+      </div>
     </section>
     <section class="main-photo">
-      <h2 class="main-text-title">dummy text of the printing and dummy</h2>
-      <p class="main-text">
-        Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry.
+      <div class="main-intro2">
+        <div class="main-txt-title">
+      <p>dummy text of the printing and dummy</p>
+        </div>
+      <div class="main-txt2">
+      <p>
+        Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry.<br>
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
       </p>
+      </div>
+
       <div class="img-cat">
       <div class="img-top">
         <img src="images/main2.png" alt="">
@@ -150,21 +272,27 @@
         </div>
       </div>
 
-      <div class="explore-explain">
+      <div class="main-scroll">
+        <div class="main-explain">
         <p>
           Continue exploring HODU
         </p>
-      </div>
-
+        </div>
       <button type="button" class="btn-download">
         Show More
       </button>
+        </div>
+      </div>
     </section>
     <section class="map">
+      <hr>
       <p class="map-intro-title">Where you’ll be</p>
       <p class="map-intro">
         330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
       </p>
+      <div>
+        map들어가는자리
+      </div>
     </section>
     <section>
       <h3>Subscribe to our Blog post</h3>

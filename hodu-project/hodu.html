@@ -1,163 +1,479 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hodu</title>
-    <link rel="stylesheet" href="reset.css">
+    <title>HODU</title>
     <style>
-        /*html {*/
-        /*    scroll-behavior: smooth;*/
-        /*}*/
+        body{
+            width: 1920px;
+            height: 100%;
+        }
+
+        /* header 부분 style */
 
 
-
-        header {
-            display: flex;
-            flex-direction: column;
+        #introducing{
             background-color: #F2E9D8;
-            align-items: center;
-            position: relative;
+
         }
 
-        .header-image {
-            width: 415px;
-            height:890px;
+        nav{
+            display:flex;
+            justify-content: space-between;
+            padding: 31px 320px;
         }
 
-        .header-nav {
+        a{
+            text-decoration: none;
+            color: #000000;
+            margin-left: 30px;
+        }
+
+        img{
+            border-radius: 30px;
+        }
+
+        p{
+            font-size: 16px;
+        }
+
+        span{
+            font-size: 48px;
+        }
+
+        .btn_download{
+            margin-left: 49px;
+        }
+
+        button{
+            width: 140px;
+            height: 50px;
+            border-radius: 40px;
+            background-color: #D97652;
+            color: #F2E9D8;
+            font-size: 16px;
+            border: none;
+        }
+
+        .wrapper{
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 100%;
-            padding : 20px;
-            box-sizing: border-box;
-
+            justify-content: space-between;
         }
 
-        nav > ul {
-            display: flex;
-            align-items:center;
-            gap: 30px;
-        }
+        .sentence{
 
-        .header-intro {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            height: 766px;
-            gap: 20px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .header-image {
-            width:415px;
-            height: 890px;
-
+            padding-left: 320px;
         }
 
-        .btn-download {
-            padding: 15px 30px;
+        .btn_int{
+            margin-top: 20px;
+        }
+
+        .Hodu_img{
+            padding-right: 320px;
+        }
+
+        .logo_Hodu{
+            border-radius: 0px;
+        }
+
+        /* contents 부분 style*/
+
+        .wrapper2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .part1{
+            display: flex;
+            margin-top: 80px;
+        }
+
+        .Hodu_img2{
+            width: 660px;
+            height: 390px;
+            border-radius: 30px;
+        }
+
+        .content_part1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 110px
+        }
+
+        .span_part1{
+            font-size: 36px;
+        }
+
+        .part2{
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .span_dummy{
+            color : #D97652
+        }
+
+        .span_dummy2 {
+            color: #D97652;
             font-size: 16px;
-            font-weight: 700;
-            background-color: #D97652;
-            color: #FFF;
-            border-radius: 40px;
         }
+
+        .part_ScrollImage{
+            margin-top: 88px;
+        }
+
+        .img_scroll{
+            margin-left: 72px;
+        }
+
+        .img_scroll2{
+            margin-top: 72px;
+        }
+
+        .list-image{
+            display: none;
+            justify-content: center;
+            align-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            width: 1290px;
+            gap: 6%;
+            line-height: 8;
+            padding-inline-start: 0px
+        }
+
+        .list-image img{
+            width: 378px;
+            height: 378px;
+
+        }
+
+        .part_Scroll{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .sentence_scroll{
+            font-size: 24px;
+        }
+
+        .btn_scroll{
+            margin-top: 28px;
+        }
+
+        .border{
+            margin-top: 80px;
+            margin-bottom: 68px;
+        }
+
+        .part_map{
+
+            width: 1278px;
+            height: 608px;
+            margin-bottom: 180px;
+
+        }
+
+        #map{
+            width: 100%;
+            height: 520px;
+        }
+
+        h4{
+            color: #606367;
+        }
+
+        .subscribe {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: absolute;
+            width: 1280px;
+            height: 201px;
+            top: -100px;
+            left: 320px;
+            border-radius: 30px;
+            background-color: #263140;
+            color: white;
+        }
+
+        .h4_subscribe{
+            color: white;
+        }
+
+        .email{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 530px;
+            height: 60px;
+            background-color: white;
+            color: #767676;
+            border-radius: 60px;
+        }
+
+        .div_email{
+            display: flex;
+            align-items: center;
+            margin-left: 28px
+        }
+
+        .p_email{
+            margin-left: 16px;
+        }
+
+        .btn_subscribe{
+            margin-right: 6px;
+            color: white;
+        }
+
+        .Hodu_last {
+            position: relative;
+
+        }
+
+        .subscribe{
+            z-index: 2;
+        }
+
+        .Hodu_big {
+            border-radius: 0px;
+            z-index: 1;
+        }
+
+        .hover {
+            position: absolute;
+            top: 271px;
+            left: 1820px;
+        }
+
+        .hover:hover{
+            background-image: url("../img/scroll-top-btn2.png");
+        }
+
+        #modalPage{
+            position: fixed;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+        }
+
+        /* modal 속성 */
+        .modal_wrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 400px;
+            background-color: lightyellow;
+            border-radius: 30px;
+        }
+
+        .h2_modal{
+            color: #D97652;
+        }
+
+        .h4_modal{
+            color: #000000;
+        }
+
+        .btn_modal{
+            width: 183px;
+        }
+
+        #sns{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 160px;
+        }
+
+        .logo{
+            margin-left: 320px;
+        }
+
+        .sns{
+            margin-right: 320px;
+        }
+
     </style>
 </head>
 <body>
-<header>
-    <div class="header-nav">
-            <a href="#"><img src="images/Logo-fin.svg" alt=""></a>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><button class="btn-download">Download</button></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="header-intro">
-        <h1>
-            Lorem Ipsum is simply<br>
-            dummy text of the printing and
-        </h1>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry.<br>
-            Lorem Ipsum has been the industry's standard dummy text<br>
-            ever since the 1500s, when an unknown
-        </p>
 
-        <button class="btn-download">Download</button>
+<header id = "introducing" >
 
-        <img src="images/header.png" class="header-image" alt="">
+    <nav>
+        <img class = "logo_Hodu" src="img/Logo.png" alt="HODU페이지 로고입니다.">
+        <div>
+            <a href="#none">Home</a>
+            <a href="#none">About</a>
+            <a href="#none">Support</a>
+            <button class = btn_download>Download</button>
+        </div>
+
+    </nav>
+    <div class="wrapper">
+        <div class="sentence">
+            <div class="title">
+                <p>
+               <span>Lorem Ipsum is simpy <br>
+               dummy text of the printing and</span>
+                </p>
+            </div>
+            <div class="content">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and <br>
+                    typesetting industry. <br>
+                    Lorem Ipsum has been the industry's standard dummy text <br>
+                    ever since the 1500s, when an unknown
+                </p>
+            </div>
+            <div class="btn_int">
+                <button>Download</button>
+            </div>
+        </div>
+        <div class="Hodu_img">
+            <img src="img/Hodu3.png" alt="호두 이미지입니다.">
+        </div>
     </div>
+
 </header>
-<main>
-    <section class="main-intro">
-            <img src="images/main1.png" alt="">
-        <h2>
-            Lorem Ipsum is simply
-            dummy text of the printing and dummy text
-        </h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 
-    </section>
-    <section class="main-ph">
-        <h2>dummy text of the printing and dummy</h2>
-        <p>
-            Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-        </p>
-        <ul>
-            <li><img src="images/main2.png" alt=""></li>
-            <li><img src="images/main3.png" alt=""></li>
-            <li><img src="images/main4.png" alt=""></li>
-            <li><img src="images/main5.png" alt=""></li>
-            <li><img src="images/main6.png" alt=""></li>
-            <li><img src="images/main7.png" alt=""></li>
-        </ul>
-        <p>
-            Continue exploring HODU
-        </p>
-        <button class="btn-more">
-            Show More
-        </button>
-        <button class="btn-end">
-            Show End
-        </button>
-    </section>
-    <section>
-        <h2>Where you’ll be</h2>
-        <address>
-            330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
-        </address>
-    </section>
-    <article>
-        <h3>Subscribe to our Blog post</h3>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text
-        </p>
-        <form class="form-subscribe">
-            <label for="inpEmail" class="address">구독 이메일 입력창</label>
-            <input type="email" id="inpEmail" required placeholder="Enter your email address">
-            <button type="submit" class="btn-common">Subscribe</button>
-        </form>
-    </article>
-</main>
-<footer>
-    <h2><a href="#"><img src="images/Logo-fin.svg" alt=""></a></h2>
-    <ul>
-        <li><a href="#"><span>블로그</span></a></li>
-        <li><a href="#"><span>인스타그램</span></a></li>
-        <li><a href="#"><span>페이스북</span></a></li>
-        <li><a href="#"><span>유튜브</span></a></li>
-    </ul>
+<section id = "contents">
+    <div class="wrapper2">
+        <div class="part1">
+            <div class = "Hodu_part1">
+                <img class = "Hodu_img2" src="img/Hodu2.png" alt="호두 2번째 이미지입니다.">
+            </div>
+            <div class="content_part1">
+                <div class="title_part1">
+                    <p>
+                    <span class = "span_part1 "> Lorem Ipsum is simply <br>
+                    dummy text of the printing <br>
+                    and dummy text <br> </span>
+                    </p>
+                </div>
+                <div class="contents_part1">
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting <br>
+                        industry.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="part2">
+            <div class="title_part2">
+                <p><span class="span_dummy">dummy text of the printing and dummy</span></p>
+            </div>
+            <div class="content_part2">
+                <p>Lorem Ipsum is simply <span class="span_dummy2">dummy text</span> of the printing and typesetting industry. <br>
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                </p>
+            </div>
+        </div>
+
+        <div class = "part_ScrollImage">
+            <div class = "img_scroll1">
+                <img src="img/Hodu_Scroll1.png" alt="">
+                <img class = img_scroll src="img/Hodu_Scroll2.png" alt="">
+                <img class = img_scroll src="img/Hodu_Scroll3.png" alt="">
+            </div>
+            <div class = "img_scroll2">
+                <img src="img/Hodu_Scroll4.png" alt="">
+                <img class = img_scroll src="img/Hodu_Scroll5.png" alt="">
+                <img class = img_scroll src="img/Hodu_Scroll6.png" alt="">
+            </div>
+        </div>
+
+        <div class = "loadImage">
+            <div class = "loadImageWrap">
+                <ul class = 'list-image'></ul>
+
+            </div>
+        </div>
+
+        <div class = part_Scroll >
+            <div>
+                <span class="sentence_scroll">Continue exploring HODU</span>
+            </div>
+            <button class="btn_scroll">Show more</button>
+        </div>
+        <div class ="border">
+            <img src="img/border.png" alt="">
+        </div>
+        <div class = "part_map">
+            <div class = "title_map">
+                <h2>Where you’ll be</h2>
+                <h4>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</h4>
+            </div>
+            <div id = "map">
+
+            </div>
+        </div>
+
+        <div class = "Hodu_last">
+            <div class="subscribe">
+                <div class = "subscribe!">
+                    <h2>Subscribe to our Blog post</h2>
+                    <h4 class="h4_subscribe">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+                        Lorem Ipsum has been the industry's standard dummy text </h4>
+                </div>
+                <div class="email">
+                    <div class="div_email">
+                        <img class = "img_email" src="img/mail.png" alt="">
+                        <p class = "p_email">Enter your e-mail address</p>
+                    </div>
+                    <button class="btn_subscribe">subscribe</button>
+                </div>
+            </div>
+            <img class = "Hodu_big" src="img/Hodu1.png" alt="">
+            <div class="hover">
+                <img class = img_hover src="img/scroll-top-btn.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id = "modalPage">
+    <div class="modal_wrap">
+        <div class="hodu_img">
+            <img src="img/Hodu_modal.png" alt="">
+        </div>
+        <div class="thanks">
+            <h2 class="h2_modal">Thank you!</h2>
+            <h4 class="h4_modal">Lorem Ipsum is simply dummy text of the printing industry.</h4>
+        </div>
+        <div class="hodu_love">
+            <button class = "btn_modal">OK! I Love HODU</button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer id = "sns">
+    <div class="logo">
+        <img class="logo_Hodu" src="img/Logo.png" alt="">
+    </div>
+    <div class = "sns">
+        <img src="img/sns.png" alt="">
+    </div>
 </footer>
-<a href="#header-nav"><span>최상단으로 이동하기</span></a>
+
 </body>
 </html>
