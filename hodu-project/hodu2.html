@@ -12,8 +12,7 @@
       width: 1920px;
       height: 100%;
     }
-
-    /* headr 부분*/
+    /* 헤더 부분*/
     header {
       display: flex;
       height: 900px;
@@ -46,18 +45,6 @@
       background: url("images/header.png") bottom right no-repeat;
       background-size: 415px 766px;
     }
-
-    /*.header-image {*/
-    /*  width: 415px;*/
-    /*  height: 890px;*/
-    /*  position: absolute;*/
-    /*  top:134px;*/
-    /*  bottom: 0;*/
-    /*  left:1185px;*/
-    /*  margin: 20px;*/
-    /*}*/
-
-
 
     .intro-title {
       font-size: 48px;
@@ -178,7 +165,12 @@
       margin-bottom: 48px;
     }
 
-    .map{
+    #map {
+      width: 1280px !important;
+      height: 520px !important;
+    }
+
+    .map-view{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -186,6 +178,8 @@
       margin-bottom:80px;
       margin-left: 320px;
     }
+
+
 
     .map-intro {
       font-weight: 500;
@@ -201,10 +195,11 @@
       border-radius: 30px;
       color: #FFFFFF;
       width: 1280px;
-      height: 200px;
+      height: 201px;
       margin-left: 320px;
       margin-bottom: -150px;
       gap: 163px;
+      box-sizing: border-box;
     }
 
     .subscribe-title {
@@ -252,15 +247,30 @@
       border-radius: 40px;
     }
 
+    .arrow-up {
+      position: fixed;
+      bottom: 179px;
+      right: 19px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #c4c4c4;
+      border-radius: 40px;
+    }
 
+    .arrow-up :hover {
+      color: #f5f5f5;
+      border: 1px solid #000000;
+    }
+
+    /* footer 부분*/
     footer {
-      padding:0;
       box-sizing: border-box;
       width: 1920px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       margin-bottom: 45px;
+      margin-top:45px;
     }
 
     .sns {
@@ -270,20 +280,65 @@
       gap: 20px;
     }
 
-    .arrow-up {
+
+    /* modal 부분  */
+    .modal {
+      width: 600px;
+      height: 400px;
+      background: url("images/backgroundmodal.png") no-repeat;
       position: fixed;
-      bottom: 179px;
-      right: 19px;
-      width: 50px;
-      height: 50px;
-      border: 1px solid #c4c4c4;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
     }
+
+    .modal img {
+      margin-top : 60px;
+    }
+
+    .modal #close-modal {
+      width: 183px;
+      height: 50px;
+      border-radius: 40px;
+      padding: 15px 29px 15px 29px;
+      gap: 10px;
+      margin-top:38px;
+      margin-bottom: 40px;
+      white-space: nowrap;
+      font-weight: 700;
+      text-align: center;
+    }
+
+
+    .modal-title {
+      color: #D97652;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 45px;
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .modal-txt {
+      color: #000000;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+    }
+
 
   </style>
 </head>
 <body>
   <header>
-    <div class="header-nav">
+    <div class="header-nav" id="sticky">
       <a href="#"><img src="images/Logo-fin.svg" alt=""></a>
       <nav>
         <ul>
@@ -363,14 +418,12 @@
       </div>
     </section>
     <hr>
-    <section class="map">
+    <section class="map-view">
       <p class="map-intro-title">Where you’ll be</p>
       <p class="map-intro">
         330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
       </p>
-      <div class="">
-        map들어가는자리
-      </div>
+      <div id="map" style="width:500px;height:400px;"></div>
     </section>
     <section>
       <div class="subscribe">
@@ -381,11 +434,20 @@
         Lorem Ipsum has been the industry's standard dummy text
       </p>
         </div>
+
       <div class="email-input">
         <input type="email" class="email-box" placeholder="Enter your e-mail address">
-        <button id="modal" class="btn-download">Subscribe</button>
+        <button id="open-modal" class="btn-download">Subscribe</button>
       </div>
       </div>
+      <!--modal-->
+      <div class="modal">
+        <img src="images/modal.png" alt="">
+        <p class="modal-title">Thank you!</p>
+        <p class="modal-txt">Lorem Ipsum is simply dummy text of the printing industry. </p>
+        <button class="btn-download" id="close-modal">OK! I Love HODU</button>
+      </div>
+
     </section>
     <div class="background-img">
       <img src="images/footer.png" alt="">
@@ -408,13 +470,59 @@
     </div>
   </footer>
 
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=66bd0bd401d15d1812b94be39714d49f"></script>
 <script>
+  // 스크롤하면 arrowup보이고 맨위에 도착했을때는 arrowup삭제
+  document.querySelector('.arrow-up').style.display = 'none';
+
+  addEventListener('scroll', () => {
+    if (scrollY > 0) {
+      document.querySelector('.arrow-up').style.display = 'flex';
+    }
+    else {
+      document.querySelector('.arrow-up').style.display = 'none';
+    }
+  });
+
+
+  //  arrowup 버튼 누르면 맨위로
   document.getElementById('header-nav').addEventListener('click',() => {
-    window.scrollTo({
+    scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   });
+
+  // subscribe 누르면 모달 열림
+  document.getElementById('open-modal').addEventListener('click', () => {
+    const modal = document.querySelector('.modal');
+    modal.style.display = 'flex';
+    modal.classList.add('on');
+  });
+
+  // 닫기 버튼 눌렀을때 모달 닫힘
+    document.getElementById('close-modal').addEventListener('click', () => {
+      const modal = document.querySelector('.modal');
+      modal.style.display = 'none'; // 모달 숨김
+      modal.classList.remove('on'); // 'on' 클래스 제거
+    });
+
+    //카카오 지도 api
+    var container = document.getElementById('map');
+    var options = {
+    center: new kakao.maps.LatLng(33.4423552138731, 126.5715765953064),
+    level: 3
+     };
+
+    var map = new kakao.maps.Map(container, options);
+
+
+     var marker = new kakao.maps.Marker({
+
+    position: map.getCenter()
+  });
+
+  marker.setMap(map);
 </script>
 </body>
 </html>
